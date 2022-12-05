@@ -99,7 +99,8 @@ postRouter.put("/comment", async (req, res) => {
         },
         { new: true }
       )
-      .populate("comments.user");
+      .populate("comments.user")
+      .populate("user");
 
     res.status(201).json({ updatedComments });
   } catch (error) {
